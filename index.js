@@ -25,16 +25,17 @@ const inventory = [
  * Prints out the name of each item in the given array.
  * @param {Item[]} items - array of items
  */
-function logNames(items) {
-  // TODO: use `forEach`
-}
+
+inventory.forEach((name) => console.log(name));
+
 
 /**
  * @param {Item[]} items - array of items
  * @returns {string[]} an array of item names in all uppercase
  */
-function getUppercaseNames(items) {
-  // TODO: use `map`
+function getUppercaseNames(inventory) {
+  const upperCaseInventory = inventory.map(name => name.toUpperCase());
+
 }
 
 /**
@@ -43,7 +44,7 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
-  // TODO: use `find`
+      return items.find(item => item.id === id)
 }
 
 /**
@@ -51,9 +52,13 @@ function getItemById(items, id) {
  * @param {string} name - name of the item to find
  * @returns {number} the price of the item named `name` if found
  */
+
 function getItemPriceByName(items, name) {
-  // TODO: use a loop!
-}
+  for (let i = 0; i < items.length; i++) {
+    if (items[i].name === name) {
+      return items[i].price;
+    }
+  }
 
 /**
  * @param {Item[]} items - array of items
